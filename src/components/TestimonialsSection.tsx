@@ -33,21 +33,21 @@ const TestimonialsSection = () => {
 
   return (
     <section id="testimonials" className="py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-8 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-montserrat font-bold mb-8 text-gray-900 animate-fade-in">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-fade-in">
             Don't just take our word for it - hear from our satisfied clients across Jamaica
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover:scale-105 animate-fade-in group">
               <div className="mb-6">
-                <div className="text-4xl text-blue-600 mb-4">"</div>
+                <div className="text-4xl text-blue-600 mb-4 group-hover:scale-110 transition-transform duration-300">"</div>
                 <p className="text-gray-700 leading-relaxed italic text-lg">
                   {testimonial.quote}
                 </p>
