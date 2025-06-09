@@ -1,7 +1,5 @@
-
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
-
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -11,14 +9,12 @@ const HeroSection = () => {
       });
     }
   };
-
-  return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center text-white overflow-hidden" style={{
-      backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('/lovable-uploads/0f576b1f-2447-4b53-b678-21b6e7e2e915.png')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed'
-    }}>
+  return <section id="hero" className="relative min-h-screen flex items-center justify-center text-white overflow-hidden" style={{
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('/lovable-uploads/0f576b1f-2447-4b53-b678-21b6e7e2e915.png')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundAttachment: 'fixed'
+  }}>
       {/* Geometric shapes overlay */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-20 h-20 border border-white/20 rotate-45 animate-pulse"></div>
@@ -29,7 +25,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-10 max-w-6xl">
         {/* Badge */}
         <div className="inline-block bg-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-6 animate-fade-in">
-          <span className="text-blue-300 font-montserrat text-xs font-light tracking-wide">
+          <span className="font-montserrat text-xs font-light tracking-wide text-slate-50">
             Lights. Camera. Solutions
           </span>
         </div>
@@ -78,8 +74,6 @@ const HeroSection = () => {
           </a>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
