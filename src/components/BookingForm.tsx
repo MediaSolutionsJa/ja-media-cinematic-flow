@@ -77,8 +77,7 @@ const BookingForm = () => {
     return packagePrice + addOnTotal;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleFormSubmit = () => {
     setIsSubmitted(true);
     setTimeout(() => setIsSubmitted(false), 5000);
   };
@@ -102,12 +101,12 @@ const BookingForm = () => {
             </div>
           )}
 
-          <form onSubmit={handleSubmit} action="https://formspree.io/f/xzzgejrb" method="POST" className="space-y-8">
+          <form action="https://formspree.io/f/xzzgejrb" method="POST" onSubmit={handleFormSubmit} className="space-y-8">
             {/* Basic Information */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <Label htmlFor="client-name">Client Name *</Label>
-                <Input id="client-name" name="client-name" required />
+                <Input id="client-name" name="client_name" required />
               </div>
               <div>
                 <Label htmlFor="email">Email *</Label>
@@ -119,54 +118,47 @@ const BookingForm = () => {
               </div>
               <div>
                 <Label htmlFor="event-date">Event Date *</Label>
-                <Input id="event-date" name="event-date" type="date" required />
+                <Input id="event-date" name="event_date" type="date" required />
               </div>
               <div>
                 <Label htmlFor="start-time">Start Time *</Label>
-                <Input id="start-time" name="start-time" type="time" required />
+                <Input id="start-time" name="start_time" type="time" required />
               </div>
               <div>
                 <Label htmlFor="event-type">Type of Event *</Label>
-                <Select name="event-type" required>
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select event type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="wedding">Wedding</SelectItem>
-                    <SelectItem value="funeral">Funeral</SelectItem>
-                    <SelectItem value="graduation">Graduation</SelectItem>
-                    <SelectItem value="corporate">Corporate</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
+                <select name="event_type" required className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                  <option value="">Select event type</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="funeral">Funeral</option>
+                  <option value="graduation">Graduation</option>
+                  <option value="corporate">Corporate</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
             </div>
 
             <div>
               <Label htmlFor="location">Event Location *</Label>
-              <Input id="location" name="location" required />
+              <Input id="location" name="event_location" required />
             </div>
 
             {/* Package Selection */}
             <div>
               <Label htmlFor="package-select">Select Package *</Label>
-              <Select 
-                name="package" 
+              <select 
+                name="selected_package" 
                 value={selectedPackage} 
-                onValueChange={setSelectedPackage}
+                onChange={(e) => setSelectedPackage(e.target.value)}
                 required
+                className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
-                <SelectTrigger id="package-select">
-                  <SelectValue placeholder="Choose your package" />
-                </SelectTrigger>
-                <SelectContent>
-                  {packages.map((pkg) => (
-                    <SelectItem key={pkg.name} value={pkg.name}>
-                      {pkg.name}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                <option value="">Choose your package</option>
+                {packages.map((pkg) => (
+                  <option key={pkg.name} value={pkg.name}>
+                    {pkg.name}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Add-ons */}
@@ -212,7 +204,7 @@ const BookingForm = () => {
               <Label htmlFor="additional-details">Additional Details / Special Requests</Label>
               <Textarea 
                 id="additional-details" 
-                name="additional-details"
+                name="additional_details"
                 placeholder="Tell us about any specific requirements for your event..."
                 rows={4}
               />
@@ -220,7 +212,7 @@ const BookingForm = () => {
 
             {/* WhatsApp Agreement */}
             <div className="flex items-center space-x-2">
-              <Checkbox id="whatsapp-agreement" name="whatsapp-agreement" />
+              <input type="checkbox" id="whatsapp-agreement" name="whatsapp_agreement" value="yes" />
               <Label htmlFor="whatsapp-agreement" className="text-sm">
                 I agree to receive event updates via WhatsApp
               </Label>
@@ -254,8 +246,8 @@ const BookingForm = () => {
             </div>
 
             {/* Hidden fields for form submission */}
-            <input type="hidden" name="estimated-total" value={calculateTotal()} />
-            <input type="hidden" name="selected-addons" value={JSON.stringify(addOns)} />
+            <input type="hidden" name="estimated_total" value={calculateTotal()} />
+            <input type="hidden" name="selected_addons" value={JSON.stringify(addOns)} />
 
             <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 text-lg font-semibold">
               Request a Booking
