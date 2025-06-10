@@ -31,9 +31,7 @@ const HeroSection = () => {
         </div>
 
         {/* Main Headlines */}
-        <h1 className="text-6xl md:text-8xl font-montserrat font-bold mb-4 tracking-tight animate-fade-in">
-          Excellence in
-        </h1>
+        <h1 className="text-6xl font-montserrat font-bold mb-4 tracking-tight animate-fade-in md:text-7xl">Excellence in</h1>
         <h2 className="text-6xl font-montserrat font-bold mb-8 tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-green-400 bg-clip-text text-transparent animate-fade-in md:text-7xl">
           Media Production
         </h2>
