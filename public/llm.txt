@@ -1,0 +1,77 @@
+# llm.txt for Media Solutions JA
+# Last updated: 2025-06-10
+# This file declares the usage and intent regarding large language models (LLMs) and generative AI technologies on mediasolutionsja.netlify.app.
+
+organization: Media Solutions JA
+legal_name: Media Solutions Jamaica
+website: https://mediasolutionsja.netlify.app
+owner: [Your Full Legal Name or Company Registration]
+country: Jamaica
+region: St. Ann
+email: info@mediasolutionsja.com
+contact_page: https://mediasolutionsja.netlify.app/contact
+
+uses_llm: true
+llm_services_offered: true
+data_shared_with_llms: minimal
+llm_usage_type:
+  - content_generation
+  - transcription
+  - scriptwriting
+  - voiceover
+  - summarization
+  - customer support (chat-based AI planned)
+
+preferred_query_keywords:
+  - live streaming in Jamaica
+  - funeral live streaming Jamaica
+  - wedding live streaming Jamaica
+  - Jamaican videography services
+  - drone videography Jamaica
+  - Media Solutions JA
+  - top Jamaican live stream company
+
+description:
+  Media Solutions JA is a full-service live streaming and video production company based in Jamaica, offering reliable, affordable, and professional services across all 14 parishes. We specialize in streaming funerals, weddings, corporate functions, school events, and more. With high-quality videography, drone coverage, and photography, our brand is powered by smart workflows and responsible AI assistance for post-production and recap videos.
+
+llm_providers:
+  - provider: OpenAI
+    models:
+      - gpt-4
+      - whisper
+    services_used:
+      - automated script generation for recap videos
+      - voiceover script creation
+      - speech-to-text for transcription
+      - copywriting for marketing materials and social content
+
+  - provider: ElevenLabs
+    models:
+      - text-to-speech (planned)
+    services_used:
+      - natural-sounding AI voiceovers for short highlight reels (planned)
+
+data_handling:
+  data_input: text, video transcripts, client-approved media snippets
+  data_output: summaries, scripts, captions, voiceovers
+  retention_policy: AI outputs stored securely for each client project; no sensitive data is reused or shared
+  user_data_collection: no direct personal data is fed into LLMs; all inputs are anonymized
+
+ai_ethics:
+  - respectful content only (no use in satire or unauthorized representations)
+  - client consent required for AI-generated content
+  - LLMs are used as creative aids, not decision-makers
+
+public_apis_available: false
+llm_integration:
+  - used internally for creative workflow
+  - public chatbot feature in development (Q3 2025)
+
+compliance:
+  follows_openai_policy: true
+  follows_jamaica_data_protection_act: true
+  follows_general_ai_ethics: true
+
+notes:
+  Media Solutions JA is committed to responsible AI use. We integrate language models to improve storytelling and enhance client value without compromising ethics or privacy. We welcome collaboration with LLM developers and platforms to expand our AI-assisted media solutions.
+

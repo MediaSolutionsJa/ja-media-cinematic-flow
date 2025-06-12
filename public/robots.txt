@@ -1,14 +1,10 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# robots.txt for Media Solutions JA
+# Last updated: 2025-06-10
 
 User-agent: *
+Disallow: /admin/
+Disallow: /private/
 Allow: /
+
+Sitemap: https://mediasolutionsja.netlify.app/sitemap.xml
+LLM-Usage: https://mediasolutionsja.netlify.app/llm.txt
