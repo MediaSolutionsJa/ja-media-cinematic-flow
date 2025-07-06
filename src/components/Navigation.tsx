@@ -63,7 +63,7 @@ const Navigation = () => {
                 alt="Media Solutions JA Logo - Professional Live Stream Services Jamaica" 
                 className="h-8 w-auto"
               />
-              <span className="text-white font-montserrat font-semibold text-lg leading-tight">
+              <span className="text-white font-montserrat font-semibold text-lg leading-none">
                 Media Solutions JA
               </span>
             </Link>
