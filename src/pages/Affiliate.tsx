@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,14 +6,11 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { DollarSign, Users, Star, Gift, ExternalLink, CheckCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import FormSuccessModal from "@/components/FormSuccessModal";
-
 const Affiliate = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
-    
     fetch(form.action, {
       method: form.method,
       body: new FormData(form),
@@ -28,9 +24,7 @@ const Affiliate = () => {
       }
     });
   };
-
-  return (
-    <>
+  return <>
       <Navigation />
       
       {/* Hero Section */}
@@ -46,26 +40,21 @@ const Affiliate = () => {
             <DollarSign className="w-20 h-20 mx-auto mb-6 text-green-400 animate-bounce" />
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-montserrat font-bold mb-6 animate-fade-in">
-            💼 Join the MSJ Affiliate Program
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-montserrat font-bold mb-6 animate-fade-in"> Join the MSJ Affiliate Program</h1>
           
           <p className="text-xl md:text-2xl font-montserrat font-light mb-8 max-w-3xl mx-auto leading-relaxed animate-fade-in">
             Earn up to <span className="text-yellow-400 font-bold">J$180,000+ per month</span> referring clients to Jamaica's top event live streaming service.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
-            <Button 
-              onClick={() => document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105"
-            >
+            <Button onClick={() => document.getElementById('signup')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105">
               Join Now - Start Earning
             </Button>
-            <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105"
-              onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
-            >
+            <Button variant="outline" onClick={() => document.getElementById('how-it-works')?.scrollIntoView({
+            behavior: 'smooth'
+          })} className="border-white hover:bg-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 text-gray-900">
               Learn How It Works
             </Button>
           </div>
@@ -194,10 +183,7 @@ const Affiliate = () => {
                 </li>
               </ul>
               
-              <Button 
-                className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105"
-                onClick={() => window.open('https://drive.google.com/drive/folders/your-folder-id', '_blank')}
-              >
+              <Button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => window.open('https://drive.google.com/drive/folders/your-folder-id', '_blank')}>
                 <ExternalLink className="w-4 h-4 mr-2" />
                 View Promo Materials
               </Button>
@@ -260,12 +246,7 @@ const Affiliate = () => {
         </div>
       </section>
 
-      <FormSuccessModal 
-        isVisible={showSuccessModal} 
-        onClose={() => setShowSuccessModal(false)} 
-      />
-    </>
-  );
+      <FormSuccessModal isVisible={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
+    </>;
 };
-
 export default Affiliate;
