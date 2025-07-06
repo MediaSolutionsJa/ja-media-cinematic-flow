@@ -3,11 +3,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { DollarSign, Users, Star, Gift, ExternalLink, CheckCircle } from "lucide-react";
+import { DollarSign, Users, Star, Gift, ExternalLink, CheckCircle, FileText } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import FormSuccessModal from "@/components/FormSuccessModal";
+
 const Affiliate = () => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -24,7 +26,9 @@ const Affiliate = () => {
       }
     });
   };
-  return <>
+
+  return (
+    <>
       <Navigation />
       
       {/* Hero Section */}
@@ -200,6 +204,73 @@ const Affiliate = () => {
         </div>
       </section>
 
+      {/* Terms & Conditions Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-6">
+              <FileText className="w-12 h-12 text-blue-600 mr-4" />
+              <h2 className="text-3xl md:text-4xl font-montserrat font-bold text-gray-900">
+                Affiliate Program Terms
+              </h2>
+            </div>
+            <p className="text-lg text-gray-600">
+              Important information about our affiliate partnership program
+            </p>
+          </div>
+
+          <Card className="shadow-lg">
+            <CardContent className="p-8">
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Commission Payment</h3>
+                    <p className="text-gray-600">
+                      Commission is paid after client booking is confirmed and paid in full. 
+                      Payments are processed monthly via bank transfer or approved payment methods.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Program Updates</h3>
+                    <p className="text-gray-600">
+                      Media Solutions JA reserves the right to update this program anytime. 
+                      All affiliates will be notified of any changes via email at least 30 days in advance.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Referral Tracking</h3>
+                    <p className="text-gray-600">
+                      Referrals must mention your name during the booking process. 
+                      It's your responsibility to ensure your referred clients provide your information.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-lg mb-2">Professional Conduct</h3>
+                    <p className="text-gray-600">
+                      All affiliates must represent Media Solutions JA professionally and 
+                      provide accurate information about our services and pricing.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
       {/* Signup Section */}
       <section id="signup" className="py-24 bg-gradient-to-r from-blue-600 to-green-600">
         <div className="container mx-auto px-4 max-w-2xl">
@@ -246,7 +317,12 @@ const Affiliate = () => {
         </div>
       </section>
 
-      <FormSuccessModal isVisible={showSuccessModal} onClose={() => setShowSuccessModal(false)} />
-    </>;
+      <FormSuccessModal 
+        isVisible={showSuccessModal} 
+        onClose={() => setShowSuccessModal(false)} 
+      />
+    </>
+  );
 };
+
 export default Affiliate;
