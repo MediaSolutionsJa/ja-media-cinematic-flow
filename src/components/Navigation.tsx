@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,16 +33,16 @@ const Navigation = () => {
       }`}>
         <div className="flex items-center justify-between h-[46px] px-6">
           {/* Left - Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img 
               src="/lovable-uploads/f39eac11-6112-488d-a596-eea0f6892264.png" 
-              alt="Media Solutions JA Logo" 
+              alt="Media Solutions JA Logo - Professional Live Stream Services Jamaica" 
               className="h-8 w-auto"
             />
             <span className="text-white font-montserrat font-semibold text-lg">
               Media Solutions JA
             </span>
-          </div>
+          </Link>
 
           {/* Center - Navigation Links (Desktop) */}
           <div className="hidden md:flex items-center space-x-8">
@@ -63,6 +64,12 @@ const Navigation = () => {
             >
               Gallery
             </button>
+            <Link 
+              to="/affiliate"
+              className="text-white text-sm hover:text-blue-400 transition-colors py-2"
+            >
+              Affiliate Program
+            </Link>
             <button 
               onClick={() => scrollToSection("contact")}
               className="text-white text-sm hover:text-blue-400 transition-colors py-2"

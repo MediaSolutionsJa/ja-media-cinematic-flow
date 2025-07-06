@@ -1,5 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Phone, Mail } from "lucide-react";
+
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -9,12 +11,19 @@ const HeroSection = () => {
       });
     }
   };
-  return <section id="hero" className="relative min-h-screen flex items-center justify-center text-white overflow-hidden" style={{
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('/lovable-uploads/0f576b1f-2447-4b53-b678-21b6e7e2e915.png')`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundAttachment: 'fixed'
-  }}>
+
+  return (
+    <section 
+      id="hero" 
+      className="relative min-h-screen flex items-center justify-center text-white overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('/lovable-uploads/0f576b1f-2447-4b53-b678-21b6e7e2e915.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'scroll' // Changed from fixed for better mobile support
+      }}
+    >
       {/* Geometric shapes overlay */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-20 h-20 border border-white/20 rotate-45 animate-pulse"></div>
@@ -31,19 +40,19 @@ const HeroSection = () => {
         </div>
 
         {/* Main Headlines */}
-        <h1 className="text-6xl font-montserrat font-bold mb-4 tracking-tight animate-fade-in md:text-7xl">Excellence in</h1>
-        <h2 className="text-6xl font-montserrat font-bold mb-8 tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-green-400 bg-clip-text text-transparent animate-fade-in md:text-7xl">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-montserrat font-bold mb-4 tracking-tight animate-fade-in">Excellence in</h1>
+        <h2 className="text-4xl sm:text-6xl md:text-7xl font-montserrat font-bold mb-8 tracking-tight bg-gradient-to-r from-blue-400 via-cyan-300 to-green-400 bg-clip-text text-transparent animate-fade-in">
           Media Production
         </h2>
 
         {/* Sub Slogan */}
-        <p className="text-xl md:text-2xl font-montserrat font-light mb-4 max-w-4xl mx-auto leading-relaxed animate-fade-in">
-          Seamless Live Streaming & Cinematic Coverage Across Jamaica
+        <p className="text-lg sm:text-xl md:text-2xl font-montserrat font-light mb-4 max-w-4xl mx-auto leading-relaxed animate-fade-in">
+          Seamless Event Live Streaming Jamaica & Cinematic Coverage Across Jamaica
         </p>
 
         {/* Service Area */}
-        <p className="text-lg font-montserrat mb-12 text-blue-200 animate-fade-in">
-          Serving St. Ann, Kingston, and beyond
+        <p className="text-base sm:text-lg font-montserrat mb-12 text-blue-200 animate-fade-in">
+          Professional Live Stream Services Jamaica - Serving St. Ann, Kingston, and beyond
         </p>
 
         {/* CTA Buttons */}
@@ -72,6 +81,8 @@ const HeroSection = () => {
           </a>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default HeroSection;
