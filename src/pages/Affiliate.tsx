@@ -192,7 +192,7 @@ const Affiliate = () => {
             <div className="bg-white rounded-2xl p-8 shadow-xl">
               <h4 className="text-xl font-montserrat font-bold mb-4 text-center">Send Referrals To:</h4>
               <div className="bg-blue-50 rounded-lg p-4 text-center">
-                <p className="text-lg font-bold mb-2">https://mediasolutionsja.com</p>
+                <p className="text-lg font-bold mb-2">www.mediasolutionsja.com</p>
                 <p className="text-gray-600 text-sm">Let your referrals choose a package and mention your name during booking.</p>
               </div>
             </div>
