@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -187,7 +188,7 @@ const Affiliate = () => {
                 </li>
               </ul>
               
-              <Button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => window.open('https://drive.google.com/drive/folders/your-folder-id', '_blank')}>
+              <Button className="mt-8 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105" onClick={() => window.open('https://drive.google.com/drive/folders/1h94dRYYLunhvPGN3Uyukh1PhqfGGO-4u?usp=sharing', '_blank')}>
                 <ExternalLink className="w-4 h-4 mr-2" />
                 View Promo Materials
               </Button>
