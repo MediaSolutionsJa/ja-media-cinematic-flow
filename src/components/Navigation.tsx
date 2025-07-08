@@ -89,6 +89,12 @@ const Navigation = () => {
                 Gallery
               </button>
               <Link 
+                to="/wedding"
+                className="text-white text-sm hover:text-blue-400 transition-colors py-2"
+              >
+                Wedding Investment
+              </Link>
+              <Link 
                 to="/affiliate"
                 className="text-white text-sm hover:text-blue-400 transition-colors py-2"
               >
@@ -154,6 +160,12 @@ const Navigation = () => {
             >
               Gallery
             </button>
+            <Link 
+              to="/wedding"
+              className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
+            >
+              Wedding Investment
+            </Link>
             <Link 
               to="/affiliate"
               className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
