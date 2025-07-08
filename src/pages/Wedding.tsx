@@ -141,100 +141,77 @@ const Wedding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-amber-50">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-white">
       {/* Hero Banner */}
       <section className="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/lovable-uploads/0f576b1f-2447-4b53-b678-21b6e7e2e915.png')",
-            filter: "brightness(0.6)"
+            filter: "brightness(0.7)"
           }}
         />
-        <div className="relative z-10 max-w-5xl mx-auto px-4">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 text-amber-300 mb-6">
-              <Heart className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-widest uppercase">Media Solutions JA</span>
-              <Heart className="w-4 h-4" />
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 tracking-tight leading-tight">
-              Capture the Magic<br />
-              <span className="font-medium">of Your Wedding Day</span>
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-2xl">
+            <Heart className="w-16 h-16 text-amber-400 mx-auto mb-6" />
+            <h1 className="text-5xl md:text-7xl font-montserrat font-bold text-white mb-6 tracking-tight">
+              Capture Every Detail of Your Wedding Day
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
-              Explore our packages tailored for love, memories, and legacy.
+            <p className="text-xl md:text-2xl text-white/90 mb-8 font-light">
+              Explore wedding photo & video packages crafted for timeless Jamaican love stories.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                onClick={() => setShowBookingForm(true)}
-                className="bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
-              >
-                Book a Session
-              </Button>
-              <Button 
-                onClick={() => document.getElementById('packages')?.scrollIntoView({ behavior: 'smooth' })}
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg font-medium rounded-full transition-all duration-300 hover:scale-105"
-              >
-                View Packages
-              </Button>
-            </div>
+            <Button 
+              onClick={() => setShowBookingForm(true)}
+              className="bg-amber-500 hover:bg-amber-600 text-black px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+            >
+              Book a Session
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Packages Section */}
-      <section id="packages" className="py-24 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 text-amber-600 mb-6">
-              <Heart className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-widest uppercase">Pricing & Packages</span>
-              <Heart className="w-4 h-4" />
-            </div>
-            <h2 className="text-4xl md:text-6xl font-light text-gray-900 mb-6 leading-tight">
-              Choose the Perfect Package<br />
-              <span className="font-medium">to Capture Your Love Story</span>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-montserrat font-bold text-gray-900 mb-4">
+              Wedding Packages
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              I am honoured to be considered for one of the most important roles of your wedding day. 
-              Choose the perfect package to capture your love story.
+            <p className="text-xl text-gray-600">
+              Choose the perfect package for your special day
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {packages.map((pkg) => (
-              <Card key={pkg.id} className={`relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-white/80 backdrop-blur-sm border-0 shadow-lg ${pkg.popular ? 'ring-2 ring-rose-300 shadow-rose-100' : ''}`}>
+              <Card key={pkg.id} className={`relative overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${pkg.popular ? 'ring-2 ring-amber-500' : ''}`}>
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
-                    <Badge className="bg-rose-500 text-white font-medium px-4 py-1 rounded-full shadow-lg">
-                      Most Popular
-                    </Badge>
-                  </div>
+                  <Badge className="absolute top-4 right-4 bg-amber-500 text-black font-semibold">
+                    Most Popular
+                  </Badge>
                 )}
-                <CardHeader className="pb-6 pt-8">
-                  <CardTitle className="text-xl font-light text-gray-900 mb-4 leading-tight">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-xl font-montserrat font-bold text-gray-900 mb-2">
                     {pkg.title}
                   </CardTitle>
-                  <CardDescription className="text-4xl font-light text-gray-900 mb-2">
+                  <CardDescription className="text-3xl font-bold text-amber-600">
                     {pkg.price}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <ul className="space-y-3">
+                <CardContent className="space-y-4">
+                  <ul className="space-y-2">
                     {pkg.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3 text-sm text-gray-700 leading-relaxed">
-                        <Heart className="w-3 h-3 text-rose-400 mt-1 flex-shrink-0" />
+                      <li key={index} className="flex items-start gap-2 text-sm text-gray-700">
+                        <Star className="w-4 h-4 text-amber-500 mt-0.5 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                   <Button 
                     onClick={() => handleBookSession(pkg.id)}
-                    className="w-full bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="w-full bg-gray-900 hover:bg-gray-800 text-white font-semibold py-3 rounded-full transition-all duration-300 hover:scale-105"
                   >
-                    Book Now
+                    Book a Session
                   </Button>
                 </CardContent>
               </Card>
@@ -244,35 +221,30 @@ const Wedding = () => {
       </section>
 
       {/* Add-Ons Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-rose-50/50 to-amber-50/50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 text-amber-600 mb-6">
-              <Heart className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-widest uppercase">Add-Ons</span>
-              <Heart className="w-4 h-4" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
-              Enhance Your Wedding Package
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-montserrat font-bold text-gray-900 mb-4">
+              Add-Ons
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              Add these beautiful services to make your wedding day even more special
+            <p className="text-xl text-gray-600">
+              Enhance your wedding package with these additional services
             </p>
           </div>
 
           <Collapsible open={showAddOns} onOpenChange={setShowAddOns}>
             <CollapsibleTrigger asChild>
-              <Button variant="outline" className="w-full text-left justify-between p-8 text-lg font-light bg-white/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl hover:shadow-xl transition-all duration-300">
+              <Button variant="outline" className="w-full text-left justify-between p-6 text-lg font-semibold">
                 View All Add-Ons
                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${showAddOns ? 'rotate-180' : ''}`} />
               </Button>
             </CollapsibleTrigger>
-            <CollapsibleContent className="mt-6">
+            <CollapsibleContent className="mt-4">
               <div className="grid md:grid-cols-2 gap-4">
                 {addOns.map((addon, index) => (
-                  <div key={index} className="flex justify-between items-center p-6 bg-white/80 backdrop-blur-sm rounded-xl border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                    <span className="font-light text-gray-900">{addon.name}</span>
-                    <span className="font-medium text-amber-600">{addon.price}</span>
+                  <div key={index} className="flex justify-between items-center p-4 bg-white rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+                    <span className="font-medium text-gray-900">{addon.name}</span>
+                    <span className="font-bold text-amber-600">{addon.price}</span>
                   </div>
                 ))}
               </div>
@@ -282,45 +254,32 @@ const Wedding = () => {
       </section>
 
       {/* Payment & Cancellation Terms */}
-      <section className="py-24 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 text-amber-600 mb-6">
-              <Heart className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-widest uppercase">Payment & Cancellation Terms</span>
-              <Heart className="w-4 h-4" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
-              Clear & Transparent Policies
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
-              For your peace of mind
-            </p>
-          </div>
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
           <Collapsible open={showTerms} onOpenChange={setShowTerms}>
             <CollapsibleTrigger asChild>
-              <Button variant="outline" className="w-full text-left justify-between p-8 text-lg font-light bg-white/80 backdrop-blur-sm border-0 shadow-lg rounded-2xl hover:shadow-xl transition-all duration-300">
-                View Payment & Cancellation Policy
+              <Button variant="outline" className="w-full text-left justify-between p-6 text-lg font-semibold">
+                Payment & Cancellation Terms
                 <ChevronDown className={`w-5 h-5 transition-transform duration-200 ${showTerms ? 'rotate-180' : ''}`} />
               </Button>
             </CollapsibleTrigger>
-            <CollapsibleContent className="mt-6">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 border-0 shadow-lg space-y-6">
-                <div className="flex items-start gap-4">
-                  <Heart className="w-4 h-4 text-rose-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700 leading-relaxed">50% deposit required to confirm booking.</p>
+            <CollapsibleContent className="mt-4">
+              <div className="bg-white rounded-lg p-6 border border-gray-200 space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2" />
+                  <p className="text-gray-700">50% deposit required to confirm booking.</p>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Heart className="w-4 h-4 text-rose-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700 leading-relaxed">Remaining balance due within 1 week after the event.</p>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2" />
+                  <p className="text-gray-700">Remaining balance due within 1 week after the event.</p>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Heart className="w-4 h-4 text-rose-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700 leading-relaxed">Full deposit refund if canceled 5+ days in advance.</p>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2" />
+                  <p className="text-gray-700">Full deposit refund if canceled 5+ days in advance.</p>
                 </div>
-                <div className="flex items-start gap-4">
-                  <Heart className="w-4 h-4 text-rose-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700 leading-relaxed">50% refund if canceled within 5 days.</p>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-amber-500 rounded-full mt-2" />
+                  <p className="text-gray-700">50% refund if canceled within 5 days.</p>
                 </div>
               </div>
             </CollapsibleContent>
@@ -329,46 +288,41 @@ const Wedding = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-rose-50/50 to-amber-50/50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 text-amber-600 mb-6">
-              <Heart className="w-4 h-4" />
-              <span className="text-sm font-medium tracking-widest uppercase">Frequently Asked Questions</span>
-              <Heart className="w-4 h-4" />
-            </div>
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6 leading-tight">
-              Everything You Need to Know
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-montserrat font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              About our wedding photography and videography services
+            <p className="text-xl text-gray-600">
+              Everything you need to know about our wedding services
             </p>
           </div>
 
           <Accordion type="single" collapsible className="space-y-4">
-            <AccordionItem value="item-1" className="bg-white/80 backdrop-blur-sm rounded-2xl border-0 shadow-lg">
-              <AccordionTrigger className="px-8 py-6 text-left font-light text-gray-900 hover:no-underline text-lg">
+            <AccordionItem value="item-1" className="bg-white rounded-lg border border-gray-200">
+              <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
                 Do you shoot destination weddings?
               </AccordionTrigger>
-              <AccordionContent className="px-8 pb-6 text-gray-700 leading-relaxed">
+              <AccordionContent className="px-6 pb-4 text-gray-700">
                 Yes, we shoot destination weddings! All travel expenses (accommodation, transportation, meals) must be covered by the client. We're excited to capture your special day wherever it takes place.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-2" className="bg-white/80 backdrop-blur-sm rounded-2xl border-0 shadow-lg">
-              <AccordionTrigger className="px-8 py-6 text-left font-light text-gray-900 hover:no-underline text-lg">
+            <AccordionItem value="item-2" className="bg-white rounded-lg border border-gray-200">
+              <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
                 Can I extend the session on the day of?
               </AccordionTrigger>
-              <AccordionContent className="px-8 pb-6 text-gray-700 leading-relaxed">
+              <AccordionContent className="px-6 pb-4 text-gray-700">
                 Yes, you can extend your session on the day of the wedding, subject to our availability. Additional hours will be charged at our standard hourly rate. We recommend discussing this possibility during your consultation.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="item-3" className="bg-white/80 backdrop-blur-sm rounded-2xl border-0 shadow-lg">
-              <AccordionTrigger className="px-8 py-6 text-left font-light text-gray-900 hover:no-underline text-lg">
+            <AccordionItem value="item-3" className="bg-white rounded-lg border border-gray-200">
+              <AccordionTrigger className="px-6 py-4 text-left font-semibold text-gray-900 hover:no-underline">
                 Do I have to order prints through you?
               </AccordionTrigger>
-              <AccordionContent className="px-8 pb-6 text-gray-700 leading-relaxed">
+              <AccordionContent className="px-6 pb-4 text-gray-700">
                 No, you're not required to order prints through us. All packages include high-resolution digital files that you can use to print anywhere you like. However, we do offer professional printing services for your convenience.
               </AccordionContent>
             </AccordionItem>
@@ -377,32 +331,22 @@ const Wedding = () => {
       </section>
 
       {/* Contact Footer Banner */}
-      <section className="py-24 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-rose-500/10 to-amber-500/10" />
-        <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 text-amber-400 mb-6">
-            <Heart className="w-4 h-4" />
-            <span className="text-sm font-medium tracking-widest uppercase">Let's Connect</span>
-            <Heart className="w-4 h-4" />
-          </div>
-          <h2 className="text-4xl md:text-5xl font-light text-white mb-6 leading-tight">
-            Still have questions?<br />
-            <span className="font-medium">Let's talk!</span>
+      <section className="py-20 px-4 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-montserrat font-bold mb-4">
+            Still have questions? Let's talk!
           </h2>
-          <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed">
-            I'm here to help make your wedding day absolutely perfect. Reach out and let's discuss how we can capture your love story.
-          </p>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-8">
-            <a href="tel:876-304-7551" className="flex items-center gap-3 text-amber-400 hover:text-amber-300 transition-colors text-lg">
-              <Phone className="w-6 h-6" />
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 mt-8">
+            <a href="tel:876-304-7551" className="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors">
+              <Phone className="w-5 h-5" />
               Call or WhatsApp: 876-304-7551
             </a>
-            <a href="https://www.mediasolutionsja.com" className="flex items-center gap-3 text-amber-400 hover:text-amber-300 transition-colors text-lg">
-              <Globe className="w-6 h-6" />
+            <a href="https://www.mediasolutionsja.com" className="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors">
+              <Globe className="w-5 h-5" />
               www.MediaSolutionsJA.com
             </a>
-            <a href="mailto:mediasolutionsja@gmail.com" className="flex items-center gap-3 text-amber-400 hover:text-amber-300 transition-colors text-lg">
-              <Mail className="w-6 h-6" />
+            <a href="mailto:mediasolutionsja@gmail.com" className="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors">
+              <Mail className="w-5 h-5" />
               mediasolutionsja@gmail.com
             </a>
           </div>
