@@ -207,7 +207,7 @@ const Wedding = () => {
             {packages.map((pkg) => (
               <Card key={pkg.id} className={`relative overflow-hidden transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 bg-white/80 backdrop-blur-sm border-0 shadow-lg ${pkg.popular ? 'ring-2 ring-rose-300 shadow-rose-100' : ''}`}>
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10">
                     <Badge className="bg-rose-500 text-white font-medium px-4 py-1 rounded-full shadow-lg">
                       Most Popular
                     </Badge>
