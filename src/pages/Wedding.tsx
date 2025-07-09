@@ -190,14 +190,14 @@ const Wedding = () => {
             <p className="text-xl md:text-2xl text-gray-600 mb-8 font-light">
               Explore our packages tailored for love, memories, and legacy.
             </p>
-            <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
-              <DialogTrigger asChild>
-                <Button size="lg" className="bg-gradient-to-r from-rose-400 to-pink-600 hover:from-rose-500 hover:to-pink-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-                  <Camera className="w-5 h-5 mr-2" />
-                  Book a Session
-                </Button>
-              </DialogTrigger>
-            </Dialog>
+            <Button 
+              size="lg" 
+              onClick={() => setIsBookingOpen(true)}
+              className="bg-gradient-to-r from-rose-400 to-pink-600 hover:from-rose-500 hover:to-pink-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            >
+              <Camera className="w-5 h-5 mr-2" />
+              Book a Session
+            </Button>
           </div>
         </div>
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -391,85 +391,87 @@ const Wedding = () => {
       </section>
 
       {/* Booking Form Dialog */}
-      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-montserrat font-bold text-gray-800 flex items-center gap-2">
-            <Heart className="w-6 h-6 text-rose-400" />
-            Book Your Wedding Session
-          </DialogTitle>
-        </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="name">Full Name</Label>
-              <Input id="name" required className="mt-1" />
+      <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
+        <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-montserrat font-bold text-gray-800 flex items-center gap-2">
+              <Heart className="w-6 h-6 text-rose-400" />
+              Book Your Wedding Session
+            </DialogTitle>
+          </DialogHeader>
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="name">Full Name</Label>
+                <Input id="name" required className="mt-1" />
+              </div>
+              <div>
+                <Label htmlFor="email">Email Address</Label>
+                <Input id="email" type="email" required className="mt-1" />
+              </div>
             </div>
-            <div>
-              <Label htmlFor="email">Email Address</Label>
-              <Input id="email" type="email" required className="mt-1" />
+            
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <Label htmlFor="phone">Phone Number (WhatsApp)</Label>
+                <Input id="phone" type="tel" required className="mt-1" />
+              </div>
+              <div>
+                <Label htmlFor="date">Wedding Date</Label>
+                <Input id="date" type="date" required className="mt-1" />
+              </div>
             </div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="phone">Phone Number (WhatsApp)</Label>
-              <Input id="phone" type="tel" required className="mt-1" />
-            </div>
-            <div>
-              <Label htmlFor="date">Wedding Date</Label>
-              <Input id="date" type="date" required className="mt-1" />
-            </div>
-          </div>
 
-          <div>
-            <Label htmlFor="location">Wedding Location</Label>
-            <Input id="location" required className="mt-1" />
-          </div>
+            <div>
+              <Label htmlFor="location">Wedding Location</Label>
+              <Input id="location" required className="mt-1" />
+            </div>
 
-          <div>
-            <Label htmlFor="package">Selected Package</Label>
-            <Select value={selectedPackage} onValueChange={setSelectedPackage}>
-              <SelectTrigger className="mt-1">
-                <SelectValue placeholder="Choose a package" />
-              </SelectTrigger>
-              <SelectContent>
-                {packages.map((pkg, index) => (
-                  <SelectItem key={index} value={pkg.name}>
-                    {pkg.name} - {pkg.price}
-                  </SelectItem>
+            <div>
+              <Label htmlFor="package">Selected Package</Label>
+              <Select value={selectedPackage} onValueChange={setSelectedPackage}>
+                <SelectTrigger className="mt-1">
+                  <SelectValue placeholder="Choose a package" />
+                </SelectTrigger>
+                <SelectContent>
+                  {packages.map((pkg, index) => (
+                    <SelectItem key={index} value={pkg.name}>
+                      {pkg.name} - {pkg.price}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div>
+              <Label>Add-Ons (Select all that apply)</Label>
+              <div className="grid grid-cols-1 gap-2 mt-2 max-h-40 overflow-y-auto">
+                {addOns.map((addOn, index) => (
+                  <div key={index} className="flex items-center space-x-2">
+                    <Checkbox
+                      id={`addon-${index}`}
+                      checked={selectedAddOns.includes(addOn.name)}
+                      onCheckedChange={(checked) => handleAddOnChange(addOn.name, checked as boolean)}
+                    />
+                    <Label htmlFor={`addon-${index}`} className="text-sm">
+                      {addOn.name} - {addOn.price}
+                    </Label>
+                  </div>
                 ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div>
-            <Label>Add-Ons (Select all that apply)</Label>
-            <div className="grid grid-cols-1 gap-2 mt-2 max-h-40 overflow-y-auto">
-              {addOns.map((addOn, index) => (
-                <div key={index} className="flex items-center space-x-2">
-                  <Checkbox
-                    id={`addon-${index}`}
-                    checked={selectedAddOns.includes(addOn.name)}
-                    onCheckedChange={(checked) => handleAddOnChange(addOn.name, checked as boolean)}
-                  />
-                  <Label htmlFor={`addon-${index}`} className="text-sm">
-                    {addOn.name} - {addOn.price}
-                  </Label>
-                </div>
-              ))}
+              </div>
             </div>
-          </div>
 
-          <div>
-            <Label htmlFor="requests">Any Special Requests</Label>
-            <Textarea id="requests" className="mt-1" rows={3} />
-          </div>
+            <div>
+              <Label htmlFor="requests">Any Special Requests</Label>
+              <Textarea id="requests" className="mt-1" rows={3} />
+            </div>
 
-          <Button type="submit" className="w-full bg-gradient-to-r from-rose-400 to-pink-600 hover:from-rose-500 hover:to-pink-700 text-white py-3 rounded-full font-semibold">
-            Submit Booking Request
-          </Button>
-        </form>
-      </DialogContent>
+            <Button type="submit" className="w-full bg-gradient-to-r from-rose-400 to-pink-600 hover:from-rose-500 hover:to-pink-700 text-white py-3 rounded-full font-semibold">
+              Submit Booking Request
+            </Button>
+          </form>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
