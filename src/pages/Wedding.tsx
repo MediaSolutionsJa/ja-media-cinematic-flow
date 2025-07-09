@@ -179,7 +179,7 @@ const Wedding = () => {
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center text-center bg-gradient-to-br from-pink-100/50 via-white to-rose-100/50 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/lovable-uploads/wedding-moment-hero.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/lovable-uploads/wedding-moment-hero.jpg')] bg-cover bg-center opacity-40"></div>
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <div className="animate-fade-in">
             <Heart className="w-16 h-16 mx-auto mb-6 text-rose-400 animate-pulse" />
