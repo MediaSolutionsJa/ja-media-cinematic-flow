@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import Navigation from "@/components/Navigation";
+import GallerySection from "@/components/GallerySection";
 
 const OurWork = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -197,6 +198,9 @@ const OurWork = () => {
           </div>
         </div>
       )}
+      
+      {/* Gallery Section */}
+      <GallerySection />
     </div>
   );
 };

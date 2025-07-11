@@ -7,7 +7,6 @@ import PackagesSection from "@/components/PackagesSection";
 import AddOnsSection from "@/components/AddOnsSection";
 import BookingForm from "@/components/BookingForm";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import GallerySection from "@/components/GallerySection";
 import ContactSection from "@/components/ContactSection";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
@@ -22,7 +21,6 @@ const Index = () => {
       <AddOnsSection />
       <BookingForm />
       <TestimonialsSection />
-      <GallerySection />
       <ContactSection />
       <WhatsAppFloat />
     </div>
