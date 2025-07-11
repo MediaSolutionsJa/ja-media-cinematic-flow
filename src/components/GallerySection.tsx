@@ -32,6 +32,12 @@ const GallerySection = () => {
       ]
     },
     {
+      category: "Live Event Coverage",
+      videos: [
+        { url: "https://youtube.com/live/lycvtZ0Bmdk?feature=share", title: "Live Event Stream" }
+      ]
+    },
+    {
       category: "Memorial Service",
       videos: [
         { url: "https://www.youtube.com/live/IkKEW5b1b7A", title: "Memorial Service Live Stream" },
