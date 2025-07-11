@@ -90,22 +90,6 @@ const OurWork = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-24 pb-12 bg-gradient-to-br from-gray-50 to-white">
-        <div className="container mx-auto px-6 text-center">
-          <div className="animate-fade-in">
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Our Work
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              At Media Solutions JA, we take pride in capturing the moments that matter most. 
-              Browse our portfolio below to see the quality and care we bring to every livestream, 
-              event, and production.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Section */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
@@ -133,6 +117,22 @@ const OurWork = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hero Section */}
+      <section className="pt-24 pb-12 bg-gradient-to-br from-gray-50 to-white">
+        <div className="container mx-auto px-6 text-center">
+          <div className="animate-fade-in">
+            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
+              Our Work
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              At Media Solutions JA, we take pride in capturing the moments that matter most. 
+              Browse our portfolio below to see the quality and care we bring to every livestream, 
+              event, and production.
+            </p>
           </div>
         </div>
       </section>
