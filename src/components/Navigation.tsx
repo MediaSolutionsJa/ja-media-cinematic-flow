@@ -82,12 +82,12 @@ const Navigation = () => {
               >
                 Packages
               </button>
-              <button 
-                onClick={() => scrollToSection("gallery")}
+              <Link 
+                to="/our-work"
                 className="text-white text-sm hover:text-blue-400 transition-colors py-2"
               >
-                Gallery
-              </button>
+                Our Work
+              </Link>
               <Link 
                 to="/wedding"
                 className="text-white text-sm hover:text-blue-400 transition-colors py-2"
@@ -154,12 +154,12 @@ const Navigation = () => {
             >
               Packages
             </button>
-            <button 
-              onClick={() => scrollToSection("gallery")}
+            <Link 
+              to="/our-work"
               className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
             >
-              Gallery
-            </button>
+              Our Work
+            </Link>
             <Link 
               to="/wedding"
               className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
