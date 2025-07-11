@@ -286,27 +286,32 @@ const Affiliate = () => {
 
           <Card className="shadow-2xl">
             <CardContent className="p-8">
-              <form action="https://formspree.io/f/xzzgejrb" method="POST" onSubmit={handleFormSubmit} className="space-y-6">
+              <form action="https://formspree.io/f/xvgrebqr" method="POST" onSubmit={handleFormSubmit} className="space-y-6">
                 <input type="hidden" name="form_type" value="affiliate_signup" />
                 
                 <div>
                   <Label htmlFor="affiliate-name">Full Name *</Label>
-                  <Input id="affiliate-name" name="affiliate_name" required />
+                  <Input id="affiliate-name" name="name" required />
                 </div>
                 
                 <div>
                   <Label htmlFor="affiliate-phone">Phone Number *</Label>
-                  <Input id="affiliate-phone" name="affiliate_phone" required />
+                  <Input id="affiliate-phone" name="phone" required />
                 </div>
                 
                 <div>
                   <Label htmlFor="affiliate-email">Email Address *</Label>
-                  <Input id="affiliate-email" name="affiliate_email" type="email" required />
+                  <Input id="affiliate-email" name="email" type="email" required />
                 </div>
                 
                 <div>
                   <Label htmlFor="affiliate-experience">Previous Marketing/Sales Experience (Optional)</Label>
-                  <Input id="affiliate-experience" name="affiliate_experience" />
+                  <Input id="affiliate-experience" name="experience" />
+                </div>
+
+                <div>
+                  <Label htmlFor="affiliate-message">Why do you want to join our affiliate program? (Optional)</Label>
+                  <Input id="affiliate-message" name="message" />
                 </div>
 
                 <Button type="submit" className="w-full bg-green-600 hover:bg-green-700 text-white py-3 text-lg font-semibold transition-all duration-300 hover:scale-105">
