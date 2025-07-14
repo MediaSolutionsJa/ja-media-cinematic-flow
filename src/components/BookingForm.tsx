@@ -138,6 +138,10 @@ const BookingForm = () => {
                   <Input id="start-time" name="start_time" type="time" required />
                 </div>
                 <div>
+                  <Label htmlFor="affiliate-name">Affiliate Name (Optional)</Label>
+                  <Input id="affiliate-name" name="affiliate_name" placeholder="Enter affiliate name if you have one" />
+                </div>
+                <div>
                   <Label htmlFor="event-type">Type of Event *</Label>
                   <select name="event_type" required className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
                     <option value="">Select event type</option>
