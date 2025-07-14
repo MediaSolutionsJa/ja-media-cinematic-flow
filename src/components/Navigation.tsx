@@ -71,12 +71,6 @@ const Navigation = () => {
             {/* Center - Navigation Links (Desktop) */}
             <div className="hidden md:flex items-center space-x-8">
               <button 
-                onClick={() => scrollToSection("services")}
-                className="text-white text-sm hover:text-blue-400 transition-colors py-2"
-              >
-                Services
-              </button>
-              <button 
                 onClick={() => scrollToSection("packages")}
                 className="text-white text-sm hover:text-blue-400 transition-colors py-2"
               >
@@ -142,12 +136,6 @@ const Navigation = () => {
       }`}>
         <div className="bg-black/95 backdrop-blur-md mx-4 rounded-2xl shadow-2xl border border-white/10">
           <div className="py-6 px-6 space-y-4">
-            <button 
-              onClick={() => scrollToSection("services")}
-              className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
-            >
-              Services
-            </button>
             <button 
               onClick={() => scrollToSection("packages")}
               className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
