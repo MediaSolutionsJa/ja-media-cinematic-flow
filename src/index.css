@@ -3,82 +3,112 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Premium Tech-Inspired Design System */
 
 @layer base {
   :root {
-    /* Premium Dark Glassmorphism Theme */
-    --background: 217 19% 5%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 217 19% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 217 19% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 217 19% 5%;
+    --primary: 220 70% 50%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 217 19% 12%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 217 19% 12%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 217 91% 60%;
-    --accent-foreground: 217 19% 5%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 19% 15%;
-    --input: 217 19% 15%;
-    --ring: 217 91% 60%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
 
     --radius: 0.75rem;
 
-    /* Glassmorphism Variables */
-    --glass-bg: 217 19% 8%;
-    --glass-border: 217 19% 15%;
-    --glass-shadow: 217 19% 3%;
-    --glass-glow: 217 91% 60%;
+    /* Premium Glassmorphism Colors */
+    --glass-primary: 220 70% 50%;
+    --glass-secondary: 200 80% 60%;
+    --glass-accent: 280 60% 70%;
+    --glass-surface: 0 0% 100%;
+    --glass-surface-dark: 220 20% 5%;
     
     /* Premium Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60% / 0.8), hsl(217 91% 70% / 0.6));
-    --gradient-secondary: linear-gradient(135deg, hsl(217 19% 12% / 0.8), hsl(217 19% 8% / 0.6));
-    --gradient-accent: linear-gradient(135deg, hsl(217 91% 60% / 0.2), hsl(217 91% 70% / 0.1));
+    --gradient-primary: linear-gradient(135deg, hsl(220 70% 50%), hsl(200 80% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(280 60% 70%), hsl(320 70% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(200 80% 60%), hsl(160 70% 65%));
+    --gradient-dark: linear-gradient(135deg, hsl(220 30% 5%), hsl(240 40% 10%));
+    --gradient-glow: linear-gradient(135deg, hsl(220 70% 50% / 0.1), hsl(200 80% 60% / 0.1));
     
-    /* Glow Effects */
-    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
-    --glow-secondary: 0 0 20px hsl(217 91% 60% / 0.2);
-    --glow-text: 0 0 10px hsl(217 91% 60% / 0.4);
+    /* Premium Shadows */
+    --shadow-glow: 0 0 60px hsl(220 70% 50% / 0.3);
+    --shadow-glass: 0 8px 32px hsl(220 70% 50% / 0.1);
+    --shadow-premium: 0 20px 60px hsl(220 70% 50% / 0.15);
+    --shadow-inner: inset 0 1px 0 hsl(0 0% 100% / 0.1);
     
-    /* Backdrop Blur */
-    --backdrop-blur: blur(20px);
-    --backdrop-blur-heavy: blur(40px);
+    /* Premium Effects */
+    --blur-glass: blur(20px);
+    --blur-backdrop: blur(12px);
+    --transition-premium: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 217 19% 5%;
+    --background: 220 20% 5%;
     --foreground: 210 40% 98%;
-    --card: 217 19% 8%;
+    --card: 220 20% 5%;
     --card-foreground: 210 40% 98%;
-    --popover: 217 19% 8%;
+    --popover: 220 20% 5%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 217 19% 5%;
-    --secondary: 217 19% 12%;
+    --primary: 220 70% 55%;
+    --primary-foreground: 220 20% 5%;
+    --secondary: 220 30% 12%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217 19% 12%;
+    --muted: 220 30% 12%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217 91% 60%;
-    --accent-foreground: 217 19% 5%;
-    --destructive: 0 84.2% 60.2%;
+    --accent: 220 30% 12%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217 19% 15%;
-    --input: 217 19% 15%;
-    --ring: 217 91% 60%;
+    --border: 220 30% 15%;
+    --input: 220 30% 15%;
+    --ring: 220 70% 55%;
+    
+    /* Dark Mode Premium Overrides */
+    --glass-surface: 220 20% 5%;
+    --gradient-dark: linear-gradient(135deg, hsl(220 30% 8%), hsl(240 40% 12%));
+    --shadow-glow: 0 0 80px hsl(220 70% 55% / 0.4);
+    --shadow-glass: 0 8px 32px hsl(220 70% 55% / 0.2);
+    --shadow-premium: 0 20px 60px hsl(220 70% 55% / 0.25);
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -88,54 +118,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
-    background: linear-gradient(135deg, hsl(217 19% 3%), hsl(217 19% 8%));
-    min-height: 100vh;
-  }
-
-  /* Glassmorphism utility classes */
-  .glass {
-    background: hsl(var(--glass-bg) / 0.1);
-    backdrop-filter: var(--backdrop-blur);
-    border: 1px solid hsl(var(--glass-border) / 0.2);
-    box-shadow: 0 8px 32px hsl(var(--glass-shadow) / 0.3);
-  }
-
-  .glass-card {
-    background: hsl(var(--glass-bg) / 0.05);
-    backdrop-filter: var(--backdrop-blur);
-    border: 1px solid hsl(var(--glass-border) / 0.1);
-    box-shadow: 0 8px 32px hsl(var(--glass-shadow) / 0.2);
-  }
-
-  .glass-nav {
-    background: hsl(var(--glass-bg) / 0.8);
-    backdrop-filter: var(--backdrop-blur-heavy);
-    border-bottom: 1px solid hsl(var(--glass-border) / 0.2);
-  }
-
-  .glow-text {
-    text-shadow: var(--glow-text);
-  }
-
-  .glow-primary {
-    box-shadow: var(--glow-primary);
-  }
-
-  .glow-secondary {
-    box-shadow: var(--glow-secondary);
-  }
-
-  .gradient-primary {
-    background: var(--gradient-primary);
-  }
-
-  .gradient-secondary {
-    background: var(--gradient-secondary);
-  }
-
-  .gradient-accent {
-    background: var(--gradient-accent);
+    @apply bg-background text-foreground;
   }
 }
 
@@ -144,7 +127,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Premium animations for glassmorphism */
+/* Premium Tech-Inspired Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -191,32 +174,114 @@ html {
 
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 20px hsl(217 91% 60% / 0.3);
+    box-shadow: 0 0 20px hsl(var(--glass-primary) / 0.3);
   }
   50% {
-    box-shadow: 0 0 40px hsl(217 91% 60% / 0.6);
+    box-shadow: 0 0 40px hsl(var(--glass-primary) / 0.6);
   }
 }
 
-@keyframes float {
+@keyframes floatUp {
   0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-20px);
   }
 }
 
-@keyframes shimmer {
+@keyframes morphShape {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+}
+
+@keyframes gradientShift {
   0% {
-    background-position: -200% 0;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
   100% {
-    background-position: 200% 0;
+    background-position: 0% 50%;
   }
 }
 
-/* Premium animation classes */
+/* Premium Glassmorphism Effects */
+.glass-morphism {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--glass-surface) / 0.1),
+    hsl(var(--glass-surface) / 0.05)
+  );
+  backdrop-filter: var(--blur-backdrop);
+  border: 1px solid hsl(var(--glass-surface) / 0.2);
+  box-shadow: var(--shadow-glass);
+}
+
+.glass-card {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--glass-surface) / 0.15),
+    hsl(var(--glass-surface) / 0.08)
+  );
+  backdrop-filter: var(--blur-backdrop);
+  border: 1px solid hsl(var(--glass-surface) / 0.25);
+  box-shadow: var(--shadow-glass), var(--shadow-inner);
+}
+
+.glass-button {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--glass-primary) / 0.15),
+    hsl(var(--glass-secondary) / 0.1)
+  );
+  backdrop-filter: var(--blur-backdrop);
+  border: 1px solid hsl(var(--glass-primary) / 0.3);
+  box-shadow: var(--shadow-glass);
+  transition: var(--transition-premium);
+}
+
+.glass-button:hover {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--glass-primary) / 0.25),
+    hsl(var(--glass-secondary) / 0.2)
+  );
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-premium);
+}
+
+/* Premium Gradient Effects */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--gradient-primary);
+  border-radius: var(--radius);
+  padding: 1px;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: hsl(var(--glass-surface));
+  border-radius: calc(var(--radius) - 1px);
+}
+
+/* Apply animations to sections on scroll */
 .animate-on-scroll {
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
@@ -241,13 +306,11 @@ html {
 }
 
 .animate-float {
-  animation: float 3s ease-in-out infinite;
+  animation: floatUp 3s ease-in-out infinite;
 }
 
-.animate-shimmer {
-  background: linear-gradient(90deg, transparent, hsl(217 91% 60% / 0.3), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+.animate-morph {
+  animation: morphShape 6s ease-in-out infinite;
 }
 
 /* Stagger animations for child elements */
