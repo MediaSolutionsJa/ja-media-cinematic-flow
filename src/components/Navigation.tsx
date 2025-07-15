@@ -53,7 +53,7 @@ const Navigation = () => {
         }`}
       >
         <div className={`mx-auto max-w-6xl px-4 transition-all duration-300 ${
-          isScrolled ? "bg-black/80 backdrop-blur-md rounded-full mt-2" : "bg-transparent"
+          isScrolled ? "glass-nav rounded-full mt-2" : "glass-nav"
         }`}>
           <div className="flex items-center justify-between h-[46px] px-6">
             {/* Left - Logo */}
@@ -63,7 +63,7 @@ const Navigation = () => {
                 alt="Media Solutions JA Logo - Professional Live Stream Services Jamaica" 
                 className="h-8 w-auto"
               />
-              <span className="text-white font-montserrat font-semibold text-lg leading-none">
+              <span className="text-foreground font-montserrat font-semibold text-lg leading-none glow-text">
                 Media Solutions JA
               </span>
             </Link>
@@ -72,31 +72,31 @@ const Navigation = () => {
             <div className="hidden md:flex items-center space-x-8">
               <button 
                 onClick={() => scrollToSection("packages")}
-                className="text-white text-sm hover:text-blue-400 transition-colors py-2"
+                className="text-foreground/80 text-sm hover:text-primary transition-all duration-300 py-2 hover:glow-text"
               >
                 Packages
               </button>
               <Link 
                 to="/our-work"
-                className="text-white text-sm hover:text-blue-400 transition-colors py-2"
+                className="text-foreground/80 text-sm hover:text-primary transition-all duration-300 py-2 hover:glow-text"
               >
                 Our Work
               </Link>
               <Link 
                 to="/wedding"
-                className="text-white text-sm hover:text-blue-400 transition-colors py-2"
+                className="text-foreground/80 text-sm hover:text-primary transition-all duration-300 py-2 hover:glow-text"
               >
                 Wedding
               </Link>
               <Link 
                 to="/affiliate"
-                className="text-white text-sm hover:text-blue-400 transition-colors py-2"
+                className="text-foreground/80 text-sm hover:text-primary transition-all duration-300 py-2 hover:glow-text"
               >
                 Affiliate Program
               </Link>
               <button 
                 onClick={() => scrollToSection("contact")}
-                className="text-white text-sm hover:text-blue-400 transition-colors py-2"
+                className="text-foreground/80 text-sm hover:text-primary transition-all duration-300 py-2 hover:glow-text"
               >
                 Contact
               </button>
@@ -106,11 +106,7 @@ const Navigation = () => {
             <div className="flex items-center space-x-4">
               <Button 
                 onClick={handleBookingClick}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition-all duration-300 animate-pulse"
-                style={{
-                  animationDuration: '2s',
-                  animationIterationCount: 'infinite',
-                }}
+                className="gradient-primary text-primary-foreground px-6 py-2 rounded-full font-medium transition-all duration-300 animate-glow-pulse shadow-glow hover:shadow-glow-lg"
               >
                 Book Now
               </Button>
@@ -118,7 +114,7 @@ const Navigation = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden text-white p-2 hover:bg-white/10 rounded-full transition-colors"
+                className="md:hidden text-foreground p-2 hover:bg-primary/20 rounded-full transition-all duration-300 glass-card"
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -134,35 +130,35 @@ const Navigation = () => {
           ? 'opacity-100 translate-y-0 pointer-events-auto' 
           : 'opacity-0 -translate-y-4 pointer-events-none'
       }`}>
-        <div className="bg-black/95 backdrop-blur-md mx-4 rounded-2xl shadow-2xl border border-white/10">
+        <div className="glass-card mx-4 rounded-2xl shadow-glass-lg border border-glass-border/20">
           <div className="py-6 px-6 space-y-4">
             <button 
               onClick={() => scrollToSection("packages")}
-              className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
+              className="block w-full text-left text-foreground text-lg hover:text-primary transition-all duration-300 py-3 border-b border-glass-border/20 hover:glow-text"
             >
               Packages
             </button>
             <Link 
               to="/our-work"
-              className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
+              className="block w-full text-left text-foreground text-lg hover:text-primary transition-all duration-300 py-3 border-b border-glass-border/20 hover:glow-text"
             >
               Our Work
             </Link>
             <Link 
               to="/wedding"
-              className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
+              className="block w-full text-left text-foreground text-lg hover:text-primary transition-all duration-300 py-3 border-b border-glass-border/20 hover:glow-text"
             >
               Wedding
             </Link>
             <Link 
               to="/affiliate"
-              className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3 border-b border-white/10"
+              className="block w-full text-left text-foreground text-lg hover:text-primary transition-all duration-300 py-3 border-b border-glass-border/20 hover:glow-text"
             >
               Affiliate Program
             </Link>
             <button 
               onClick={() => scrollToSection("contact")}
-              className="block w-full text-left text-white text-lg hover:text-blue-400 transition-colors py-3"
+              className="block w-full text-left text-foreground text-lg hover:text-primary transition-all duration-300 py-3 hover:glow-text"
             >
               Contact
             </button>
@@ -173,7 +169,7 @@ const Navigation = () => {
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-30 md:hidden"
+          className="fixed inset-0 bg-black/50 z-30 md:hidden backdrop-blur-sm"
           onClick={() => setIsMobileMenuOpen(false)}
         />
       )}
