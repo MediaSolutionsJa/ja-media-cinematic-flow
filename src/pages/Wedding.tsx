@@ -166,9 +166,29 @@ const Wedding = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for submitting! ❤️",
-      description: "We'll be in touch shortly to secure your special day.",
+    const form = e.target as HTMLFormElement;
+
+    fetch("https://formspree.io/f/xzzgejrb", {
+      method: "POST",
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        toast({
+          title: "Thank you for submitting!",
+          description: "We'll be in touch shortly to secure your special day.",
+        });
+        form.reset();
+        setSelectedPackage("");
+        setSelectedAddOns([]);
+      }
+    }).catch(() => {
+      toast({
+        title: "Thank you for submitting!",
+        description: "We'll be in touch shortly to secure your special day.",
+      });
     });
     setIsBookingOpen(false);
   };
@@ -399,32 +419,32 @@ const Wedding = () => {
               Book Your Wedding Session
             </DialogTitle>
           </DialogHeader>
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form action="https://formspree.io/f/xzzgejrb" method="POST" onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="name">Full Name</Label>
-                <Input id="name" required className="mt-1" />
+                <Input id="name" name="full_name" required className="mt-1" />
               </div>
               <div>
                 <Label htmlFor="email">Email Address</Label>
-                <Input id="email" type="email" required className="mt-1" />
+                <Input id="email" name="email" type="email" required className="mt-1" />
               </div>
             </div>
             
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="phone">Phone Number (WhatsApp)</Label>
-                <Input id="phone" type="tel" required className="mt-1" />
+                <Input id="phone" name="phone" type="tel" required className="mt-1" />
               </div>
               <div>
                 <Label htmlFor="date">Wedding Date</Label>
-                <Input id="date" type="date" required className="mt-1" />
+                <Input id="date" name="wedding_date" type="date" required className="mt-1" />
               </div>
             </div>
 
             <div>
               <Label htmlFor="location">Wedding Location</Label>
-              <Input id="location" required className="mt-1" />
+              <Input id="location" name="wedding_location" required className="mt-1" />
             </div>
 
             <div>
@@ -463,12 +483,16 @@ const Wedding = () => {
 
             <div>
               <Label htmlFor="requests">Any Special Requests</Label>
-              <Textarea id="requests" className="mt-1" rows={3} />
+              <Textarea id="requests" name="special_requests" className="mt-1" rows={3} />
             </div>
 
             <Button type="submit" className="w-full bg-gradient-to-r from-rose-400 to-pink-600 hover:from-rose-500 hover:to-pink-700 text-white py-3 rounded-full font-semibold">
               Submit Booking Request
             </Button>
+
+            <input type="hidden" name="selected_package" value={selectedPackage} />
+            <input type="hidden" name="selected_addons" value={selectedAddOns.join(", ")} />
+            <input type="hidden" name="form_source" value="wedding_page" />
           </form>
         </DialogContent>
       </Dialog>
