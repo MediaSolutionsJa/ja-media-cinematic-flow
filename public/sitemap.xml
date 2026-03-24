@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
+<urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
@@ -9,25 +9,19 @@
   </url>
 
   <url>
-    <loc>https://mediasolutionsja.com/services</loc>
+    <loc>https://mediasolutionsja.com/wedding</loc>
+    <lastmod>2025-07-06</lastmod>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://mediasolutionsja.com/our-work</loc>
     <lastmod>2025-07-06</lastmod>
     <priority>0.90</priority>
   </url>
 
   <url>
     <loc>https://mediasolutionsja.com/affiliate</loc>
-    <lastmod>2025-07-06</lastmod>
-    <priority>0.95</priority>
-  </url>
-
-  <url>
-    <loc>https://mediasolutionsja.com/contact</loc>
-    <lastmod>2025-07-06</lastmod>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://mediasolutionsja.com/about</loc>
     <lastmod>2025-07-06</lastmod>
     <priority>0.85</priority>
   </url>
