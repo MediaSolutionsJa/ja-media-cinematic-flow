@@ -89,6 +89,9 @@ const BookingForm = () => {
     name: "55\" TV Setup",
     price: 35000
   }, {
+    name: "75\" TV Setup",
+    price: 50000
+  }, {
     name: "100\" TV Setup",
     price: 85000
   }, {
