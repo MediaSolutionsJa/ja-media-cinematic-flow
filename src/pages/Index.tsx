@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -9,20 +8,28 @@ import BookingForm from "@/components/BookingForm";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import TrustIndicatorsSection from "@/components/TrustIndicatorsSection";
+import FeaturedWorkSection from "@/components/FeaturedWorkSection";
+import FuneralHighlightSection from "@/components/FuneralHighlightSection";
+import MobileCtaBar from "@/components/MobileCtaBar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
-      <AboutSection />
+      <TrustIndicatorsSection />
       <ServicesSection />
+      <AboutSection />
+      <FeaturedWorkSection />
       <PackagesSection />
       <AddOnsSection />
-      <BookingForm />
+      <FuneralHighlightSection />
       <TestimonialsSection />
+      <BookingForm />
       <ContactSection />
       <WhatsAppFloat />
+      <MobileCtaBar />
     </div>
   );
 };
