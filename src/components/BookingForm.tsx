@@ -90,8 +90,14 @@ const BookingForm = () => {
     name: "120\" Projector Screen",
     price: 15000
   }, {
-    name: "2.5 mm LED Video Wall 16ft (W) x 9ft (H)",
-    price: 315000
+    name: "LED Screen Equipment Package Total (2 mm Indoor LED + Multimedia + Trussing)",
+    price: 313000
+  }, {
+    name: "Production Team (Programmer, LED Technicians, Electrician/Gaffer)",
+    price: 120500
+  }, {
+    name: "Logistics Package (Meals + 24ft Box Truck Transport)",
+    price: 173760
   }, {
     name: "Stage Lighting (Basic)",
     price: 30000
@@ -293,6 +299,9 @@ const BookingForm = () => {
                     <span>${calculateTotal().toLocaleString()}</span>
                   </div>
                 </div>
+                <p className="text-xs text-gray-500 mt-4">
+                  For large LED productions, a 50% deposit is required at confirmation, with the remaining balance due 7 days after completion.
+                </p>
               </div>
 
               {/* Hidden fields for form submission */}
