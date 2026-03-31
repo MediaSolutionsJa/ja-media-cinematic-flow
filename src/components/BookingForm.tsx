@@ -9,6 +9,11 @@ const BookingForm = () => {
   const [selectedPackage, setSelectedPackage] = useState("");
   const [addOns, setAddOns] = useState<Record<string, number>>({});
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const LED_PACKAGE_NAME = "LED Screen Equipment Package Total (2 mm Indoor LED 16ft W x 9ft H + Multimedia + Trussing)";
+  const LED_PACKAGE_DEPENDENCIES = [
+    "Production Team (Programmer, LED Technicians, Electrician/Gaffer)",
+    "Logistics Package (Meals + 24ft Box Truck Transport)"
+  ];
   const packages = [{
     name: "Simple Package - $40,000",
     price: 40000
@@ -90,7 +95,7 @@ const BookingForm = () => {
     name: "120\" Projector Screen",
     price: 15000
   }, {
-    name: "LED Screen Equipment Package Total (2 mm Indoor LED + Multimedia + Trussing)",
+    name: "LED Screen Equipment Package Total (2 mm Indoor LED 16ft W x 9ft H + Multimedia + Trussing)",
     price: 313000
   }, {
     name: "Production Team (Programmer, LED Technicians, Electrician/Gaffer)",
@@ -126,17 +131,29 @@ const BookingForm = () => {
     setAddOns(prev => {
       const current = prev[name] || 0;
       const newValue = Math.max(0, Math.min(maxQty, current + change));
-      if (newValue === 0) {
-        const {
-          [name]: removed,
-          ...rest
-        } = prev;
-        return rest;
-      }
-      return {
-        ...prev,
-        [name]: newValue
+
+      const next = {
+        ...prev
       };
+
+      if (newValue === 0) {
+        delete next[name];
+      } else {
+        next[name] = newValue;
+      }
+
+      const ledQty = next[LED_PACKAGE_NAME] || 0;
+      if (ledQty > 0) {
+        LED_PACKAGE_DEPENDENCIES.forEach(dependency => {
+          next[dependency] = ledQty;
+        });
+      } else if (name === LED_PACKAGE_NAME && newValue === 0) {
+        LED_PACKAGE_DEPENDENCIES.forEach(dependency => {
+          delete next[dependency];
+        });
+      }
+
+      return next;
     });
   };
   const calculateTotal = () => {
@@ -244,23 +261,31 @@ const BookingForm = () => {
               <div>
                 <Label className="text-lg font-semibold mb-4 block">Add-On Services</Label>
                 <div className="grid md:grid-cols-2 gap-4 max-h-96 overflow-y-auto border border-gray-200 rounded-lg p-4">
-                  {addOnItems.map(item => <div key={item.name} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+                  {addOnItems.map(item => {
+                  const isLedDependency = LED_PACKAGE_DEPENDENCIES.includes(item.name);
+                  const isLedPackageSelected = (addOns[LED_PACKAGE_NAME] || 0) > 0;
+                  const lockQtyControl = isLedDependency && isLedPackageSelected;
+                  return <div key={item.name} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                       <div className="flex-1">
                         <span className="text-sm font-medium">{item.name}</span>
                         <div className="text-sm text-gray-600">
                           ${item.price.toLocaleString()}
                         </div>
+                        {lockQtyControl && <div className="text-xs text-blue-600 mt-1">
+                            Auto-selected with LED wall package
+                          </div>}
                       </div>
                       <div className="flex items-center gap-2">
-                        <Button type="button" variant="outline" size="sm" onClick={() => updateAddOn(item.name, -1)} disabled={!addOns[item.name]}>
+                        <Button type="button" variant="outline" size="sm" onClick={() => updateAddOn(item.name, -1)} disabled={!addOns[item.name] || lockQtyControl}>
                           <Minus className="w-4 h-4" />
                         </Button>
                         <span className="w-8 text-center">{addOns[item.name] || 0}</span>
-                        <Button type="button" variant="outline" size="sm" onClick={() => updateAddOn(item.name, 1)} disabled={addOns[item.name] >= (item.maxQty || 10)}>
+                        <Button type="button" variant="outline" size="sm" onClick={() => updateAddOn(item.name, 1)} disabled={addOns[item.name] >= (item.maxQty || 10) || lockQtyControl}>
                           <Plus className="w-4 h-4" />
                         </Button>
                       </div>
-                    </div>)}
+                    </div>;
+                })}
                 </div>
               </div>
 

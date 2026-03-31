@@ -51,7 +51,7 @@ const AddOnsSection = () => {
         { name: "55\" TV Setup", price: "$35,000" },
         { name: "100\" TV Setup", price: "$80,000" },
         { name: "Projector + 120\" Screen Setup", price: "$45,000" },
-        { name: "2 mm Indoor LED Video Panel 16:9 Screen (after discount)", price: "$234,000" },
+        { name: "2 mm Indoor LED Video Panel (16ft W x 9ft H) 16:9 Screen (after discount)", price: "$234,000" },
         { name: "Media Server + Windows Laptop + Cables & Accessories", price: "$39,000" },
         { name: "Trussing Structure for LED Screen", price: "$40,000" },
         { name: "LED Screen Equipment Package Total", price: "$313,000" }
