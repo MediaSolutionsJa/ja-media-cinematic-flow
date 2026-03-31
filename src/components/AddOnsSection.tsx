@@ -51,11 +51,20 @@ const AddOnsSection = () => {
         { name: "55\" TV Setup", price: "$35,000" },
         { name: "100\" TV Setup", price: "$80,000" },
         { name: "Projector + 120\" Screen Setup", price: "$45,000" },
-        { name: "2.5 mm LED Video Wall (Indoor) 16ft (W) x 9ft (H)", price: "$200,000" },
-        { name: "Truss System & Rigging", price: "$30,000" },
-        { name: "Video Processor & Control System", price: "$25,000" },
-        { name: "Delivery & Setup (Clarendon)", price: "$40,000" },
-        { name: "On-site Technician (8 hours)", price: "$20,000" }
+        { name: "2 mm Indoor LED Video Panel (16ft W x 9ft H) 16:9 Screen (after discount)", price: "$234,000" },
+        { name: "Media Server + Windows Laptop + Cables & Accessories", price: "$39,000" },
+        { name: "Trussing Structure for LED Screen", price: "$40,000" },
+        { name: "LED Screen Equipment Package Total", price: "$313,000" }
+      ]
+    },
+    {
+      title: "Production Crew & Logistics",
+      items: [
+        { name: "Production Team (Programmer, LED Technicians, Electrician/Gaffer)", price: "$120,500" },
+        { name: "Production Meals", price: "From $8,000" },
+        { name: "Transportation (24ft Box Truck, per mile, toll included)", price: "$1,725 per mile" },
+        { name: "Typical Logistics Total (based on prior scope)", price: "$173,760" },
+        { name: "Estimated Total with GCT (15%)", price: "$698,349" }
       ]
     },
     {
@@ -86,6 +95,9 @@ const AddOnsSection = () => {
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Enhance your event with our professional add-on services
+          </p>
+          <p className="text-sm text-gray-500 max-w-4xl mx-auto mt-4">
+            LED wall pricing reflects the latest production quote scope and includes updated equipment, crew, logistics, and tax-aligned totals.
           </p>
         </div>
 
